@@ -8,14 +8,16 @@ import mongoose from 'mongoose';
 import path from 'node:path';
 import router from './routes.js';
 
-const app = express();
+const cors = require('cors');
+
 app.use(cors({
   origin: [
-    'http://localhost:5173',
-    'http://127.0.0.1:5173',
-    'http://192.168.56.1:5173'
+    'https://gridwatch-2s8fece3j-rex-4872.vercel.app',
+    'https://gridwatch-rex-4872.vercel.app',
+    'https://gridwatch-jade-alpha.vercel.app'
   ],
-  credentials: true
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true, limit: '1mb' }));
