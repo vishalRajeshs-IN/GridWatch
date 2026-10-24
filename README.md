@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GridWatch ⚡ — Version 1.1
 Electrical distribution monitoring prototype (React + Vite + Express + MongoDB + Leaflet).
 
@@ -59,3 +60,7 @@ Change these credentials and the JWT secret before any deployment.
 - Manual outage records are announcements, not sensor detections. Live integration requires an authorized utility/SCADA/IoT data source and secure gateway.
 - Do not use demo coordinates as real electrical infrastructure locations.
 - For production, add rate limiting, email verification, password reset, audit logging, stronger validation, HTTPS, backups, and security review.
+=======
+# GridWatch
+Electrical distribution monitoring prototype (React + Vite + Express + MongoDB + Leaflet).
+>>>>>>> b43d390b121b3fe9b4128da3ea5385691b68b520
