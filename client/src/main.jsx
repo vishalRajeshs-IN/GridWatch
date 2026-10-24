@@ -6,7 +6,7 @@ import { Activity, AlertTriangle, Bell, Building2, CheckCircle2, ChevronRight, C
 import 'leaflet/dist/leaflet.css';
 import './styles.css';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = "https://gridwatch-fdsu.onrender.com";
 const assetIcons = {
   substation: ['🏭', '#2563eb'], transformer: ['⚡', '#d97706'], pole: ['▥', '#16a34a'], feeder: ['〰', '#7c3aed']
 };
@@ -34,7 +34,7 @@ const shortDate = (date) => date ? new Date(date).toLocaleDateString([], {month:
 
 async function request(path, token, options={}) {
   const headers = { ...(options.body instanceof FormData ? {} : {'Content-Type':'application/json'}), ...(token ? {Authorization:`Bearer ${token}`} : {}), ...(options.headers||{}) };
-  const res = await fetch(`${API}${path}`, { ...options, headers });
+  const res = await fetch('https://gridwatch-fdsu.onrender.com/api/auth/login',  { ...options, headers });
   const data = await res.json().catch(()=>({}));
   if (!res.ok) throw new Error(data.message || `Request failed (${res.status})`);
   return data;
